@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import ChoiceBar from './components/ChoiceBar';
+import VotingComponent from './components/VotingComponent';
 import './App.css';
+
+const vote = {
+  title: 'How is your day?',
+  description: 'Tell me: how has your day been so far?',
+  totalVotes: 20,
+  choices: [
+    {id: 'choice_1', title: 'Good', count: 7, percent: 35},
+    {id: 'choice_2', title: 'Bad', count: 12, percent: 60},
+    {id: 'choice_3', title: 'Not sure yet', count: 1, percent: 5}
+  ]
+};
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <VotingComponent vote={vote}/>
     );
   }
 }
